@@ -57,7 +57,9 @@ public class HandleTables extends CommonMethods{
 			i+=1;
 		}
 		
-		Thread.sleep(3000);
+
+		
+		Thread.sleep(5000);
 		
 		driver.quit();
 		
