@@ -46,9 +46,9 @@ public class CommonMethods {
 		}else {
 			System.err.println("Browser not supported");
 		}
-		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(40,  TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(20,  TimeUnit.SECONDS);
+//		driver.manage().window().maximize();
+//		driver.manage().timeouts().pageLoadTimeout(40,  TimeUnit.SECONDS);
+//		driver.manage().timeouts().implicitlyWait(20,  TimeUnit.SECONDS);
 		driver.get(url);
 	}
 	

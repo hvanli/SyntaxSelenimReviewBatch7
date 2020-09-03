@@ -64,6 +64,8 @@ public class HandleFramesAndWindoes  extends CommonMethods{
 		
 		driver.switchTo().window(childWindowHandle);
 		
+		
+		
 		Thread.sleep(3000);
 		driver.close();
 	}
