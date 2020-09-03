@@ -1,5 +1,7 @@
 package com.review.class03;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -20,20 +22,48 @@ public class CalenderRecap extends CommonMethods{
 		driver.findElement(By.linkText("Leave")).click();
 		driver.findElement(By.linkText("Leave List")).click();
 		
-		driver.findElement(By.id("calFromDate")).click();
+		// sendKeys()
+		// use table
 		
-		WebElement months=driver.findElement(By.xpath("//div[@class='ui-datepicker-title']/select[1]"));
+		// 1. sendKeys
 		
-		WebElement years=driver.findElement(By.xpath("//div[@class='ui-datepicker-title']/select[2]"));
-		
-		Select mSelect=new Select(months);
-		Select ySelect=new Select(years);
-		
-		mSelect.selectByVisibleText("Jul");
-		ySelect.selectByVisibleText("2019");
 		
 		Thread.sleep(3000);
 		
-		driver.quit();
+		WebElement fromCal=driver.findElement(By.id("calFromDate"));
+		
+		fromCal.click();
+		
+//		fromCal.clear();
+//		fromCal.sendKeys("2019-05-06");
+		
+		// create an object of Select class for month select
+		
+		WebElement months=driver.findElement(By.xpath("//select[@class='ui-datepicker-month']"));
+		
+		Select mSelect=new Select(months);
+		mSelect.selectByVisibleText("May");
+		
+		
+		// create an object of Select class for year select
+		
+		
+		WebElement years=driver.findElement(By.xpath("//select[@class='ui-datepicker-year']"));
+		
+		Select ySelect=new Select(years);
+		ySelect.selectByVisibleText("2019");
+		
+		// Select the table and find rows on it
+		
+		Thread.sleep(2000);
+		
+		List<WebElement> days=driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']/tbody/tr/td"));
+		
+		for(WebElement day:days) {
+			if(day.getText().equals("19")) {
+				day.click();
+			}
+		}
+
 	}
 }
