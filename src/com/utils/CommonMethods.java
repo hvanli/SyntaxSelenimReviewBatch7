@@ -26,7 +26,7 @@ public class CommonMethods {
 	public static final String Ebay_URL="https://www.ebay.com/";
 	public static final String CHROME_DRIVER_FILEPATH="/SeleniumReviewBatch7/drivers/chromedriver.exe";
 	
-	
+	public static final String ORANGE_HRM_URL="https://opensource-demo.orangehrmlive.com/index.php/auth/login";
 	
 	
 	
